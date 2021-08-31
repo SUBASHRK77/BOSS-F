@@ -1,0 +1,23 @@
+# pip install pafy
+#pip install youtube_dl
+import pafy
+
+def getMetaData(video):
+    print("Video Details are ---")
+        print("video title : ",video.title)  
+        #print title
+            # print view count
+                #print(f"Totalviews{video.viewcount}| video lenght : {video.lengh} secounds")
+                  print("channelname :",video.author) 
+                    #print author
+def download_As_video(video):
+    getMetaData(video) #get video details
+        best= video.getbest()
+           print(f"VideoResolution{best.resolution}\n video extension:{best.extension}")
+                best.download()#download the video
+                    print("Video is downloaded...")
+# if __name__ == "__main__":
+url = input("Enter video url : ")
+#create instance
+video = pafy.new(url)
+download_As_video(video)
